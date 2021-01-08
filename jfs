@@ -177,6 +177,7 @@ Available commands:
   global
   list
   help
+  new
   preview
   version
 EOF
@@ -243,6 +244,10 @@ case "${1:-help}" in
 	("help")
 		shift
 		help
+		;;
+	("new")
+		shift
+		new
 		;;
 	("preview")
 		shift
