@@ -176,7 +176,7 @@ while getopts 'fghV' option; do
 			exit 0
 			;;
 		*)
-			printf "command '%s' not found\n" "${1}" > /dev/null 2>&1
+			_error "command not found\n" > /dev/null 2>&1
 			false
 			;;
 	esac
@@ -200,7 +200,7 @@ case "${1:-help}" in
 		version
 		;;
 	*)
-		printf "command '%s' not found\n" "${1}" > /dev/null 2>&1
+		_error "command not found\n" > /dev/null 2>&1
 		false
 		;;
 esac
