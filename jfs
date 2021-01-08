@@ -1,0 +1,174 @@
+#!/usr/bin/env bash
+
+set -e
+set -o nounset
+set -o pipefail
+IFS=$'\n\t'
+
+_ME="${0##*/}"
+_VERSION="0.0.1"
+_HOMEPAGE="https://github.com/tg-z/jfs"
+COPY_FILE_OPT=0
+
+[ -z "${EDITOR}" ] && EDITOR="vim"
+
+if [[ -n "${JUSTFILE_DIR}" ]]; then
+  JUSTFILE_DIR="${HOME}/.local/share/justfiles"
+else
+  mkdir -p "${JUSTFILE_DIR}"
+fi
+
+# if [ -z "${1}" ]; then
+# 	_help
+# else
+# 	terminal-notifier -message "you said: " "${1}"
+# fi
+
+_var() {
+  _just="$(command -v just)"
+  _fzf="$(command -v fzf)"
+  _ag="$(command -v ag)"
+}
+
+_check() {
+  _var
+  if [ ! -x "${_just}" ]; then
+	  echo "you must install just to run this command"
+	  exit 1
+  fi
+  if [ ! -x "${_fzf}" ]; then
+	  echo "you must install fzf to run this command"
+	  exit 1
+  fi
+  if [ ! -x "${_ag}" ]; then
+      echo "you must install ag to run this command"
+      exit 1
+  fi
+}
+
+_copy() {
+  if [ -x "$(command -v xclip)" ]; then
+    echo "${1}" | xclip -selection c
+  fi
+
+  if [ -x "$(command -v pbcopy)" ]; then
+    echo "${1}" | pbcopy
+  fi
+}
+
+find() {
+  _check
+  local files="${1}"
+  local results
+  results="$("${_ag}" -rg "${files}" "${JUSTFILE_DIR}")"
+
+  if [ ! "${results}" -eq 0 ]; then
+    echo "No results were found"
+    exit 1
+  fi
+
+  if [[ "${COPY_FILE_OPT}" -gt 1 ]]; then
+    _copy "${results}"
+  fi
+
+  echo "${results}"
+}
+
+_banner() {
+  cat <<EOF
+ __   ___        
+ |__|.'  _|.-----.
+ |  ||   _||__ --|
+ |  ||__|  |_____|
+|___|             
+
+EOF
+}
+
+_commands() {
+  cat <<EOF
+Available commands:
+  commands
+  find
+  help
+  version
+EOF
+}
+
+help() {
+  _banner
+  cat <<EOF
+${_ME} - a tool for just dealing with your justfiles.
+
+Usage:
+  ${_ME} <cmd> <opts> args
+Options:
+  -f 	Copy justfile location/path after running command.
+  -h 	Display this help information.
+  -V 	Display version information and exit.
+Home:
+  ${_HOMEPAGE}
+Help:
+  ${_ME} help
+EOF
+_commands
+}
+
+version() {
+  printf "%s %s\n" "${_ME}" "${_VERSION}"
+}
+
+while getopts 'fhV' option; do
+	case "${option}" in
+		f)
+			shift
+			COPY_FILE_OPT=1
+			;;
+		h)
+			shift
+			help
+			exit 0
+			;;
+		V)
+			shift
+			version
+			exit 0
+			;;
+		*)
+			printf "command '%s' not found\n" "${1}" > /dev/null 2>&1
+			false
+			;;
+	esac
+done
+
+case "${1:-help}" in
+	("commands")
+		shift
+		_commands
+		;;
+	("find")
+		shift
+		find "${1}"
+		;;
+	("help")
+		shift
+		help
+		;;
+	("version")
+		shift
+		version
+		;;
+	*)
+		printf "command '%s' not found\n" "${1}" > /dev/null 2>&1
+		false
+		;;
+esac
+
+# ju() {
+# if [ -z "${JUSTFILES_DIR}" ]
+# then
+# 	printf "%s" "you must set a directory for your justfiles\n"
+# 	false
+# else
+# just -d "${JUSTFILES_DIR}"
+# }
