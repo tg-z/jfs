@@ -85,7 +85,7 @@ _copy() {
 
 _global () {
         local _list
-	_list="$(fd justfile '/Users/bluetooth' -i -H -t f --maxdepth 6)"
+	_list="$("${_fd}" justfile '/Users/bluetooth' -i -H -t f --maxdepth 6)"
         printf "%s\n" "${_list}"
 }
 
