@@ -25,6 +25,22 @@ fi
 # 	terminal-notifier -message "you said: " "${1}"
 # fi
 
+_info() {
+    # $1: info message
+    printf "%b\n" "\033[32mINFO\033[0m ${1}" >&2
+}
+
+_warn() {
+    # $1: warning message
+    printf "%b\n" "\033[33mWARNING\033[0m ${1}" >&2
+}
+
+_error() {
+    # $1: error message
+    printf "%b\n" "\033[31mERROR\033[0m ${1}" >&2
+    exit 1
+}
+
 _var() {
   _just="$(command -v just)"
   _fzf="$(command -v fzf)"
