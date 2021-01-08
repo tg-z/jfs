@@ -47,4 +47,4 @@ ln -s jfs ~/bin/jfs
 ## usage
 
 ## extra
-i use [vim-zettel](https://github.com/michal-h21/vim-zettel) in tandem with jfs. it uses the [zettelkasten method](https://zettelkasten.de/) alongside [vimwiki](https://github.com/vimwiki/vimwiki).
+
