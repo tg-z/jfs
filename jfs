@@ -93,7 +93,7 @@ preview() {
   _check
   cd "${JUSTFILE_DIR}"
   local _files
-  _files="$("${_fd}" -i -H -t f --color=never | "${_fzf}" | xargs "${_bat}" -n)"
+  _files="$("${_fd}" -i -H -t f --color=never | "${_fzf}" )" | xargs "${_bat}" -n
 }
 
 _global() {
