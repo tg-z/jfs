@@ -84,9 +84,14 @@ _copy() {
 list() {
   cd "${JUSTFILE_DIR}"
   local _files
-  _files="$(fd -i -H -t f --color=never)"
+  _files="$("${_fd}" -i -H -t f --color=never)"
   printf "%s\n" "${_files}"
 }
+
+preview() {
+  _check
+  cd "${JUSTFILE_DIR}"
+  local _files="$()"
 
 _global() {
   _check
@@ -129,6 +134,7 @@ Available commands:
   global
   list
   help
+  preview
   version
 EOF
 }
