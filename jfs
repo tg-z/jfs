@@ -81,6 +81,10 @@ _copy() {
   fi
 }
 
+_list() {
+  
+}
+
 _global() {
   _check
   local _list
