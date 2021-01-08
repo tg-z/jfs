@@ -58,6 +58,11 @@ _copy() {
   fi
 }
 
+_justfiles () {
+        local _list="$(fd justfile '/Users/bluetooth' -i -H -t f --maxdepth 6)"
+        printf "%s\n" "${_list}"
+}
+
 find() {
   _check
   local files="${1}"
