@@ -211,4 +211,5 @@ esac
 # 	false
 # else
 # just -d "${JUSTFILES_DIR}"
-# }
+# just -f ~/.local/share/justfiles/justfile -d ~/.local/share/justfiles
+#}
