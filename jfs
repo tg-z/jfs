@@ -101,9 +101,6 @@ find() {
 
   echo "${results}"
 
-  if [[ "${GLOBAL_OPT}" -gt 1 ]]; then
-	  _global
-  fi
 }
 
 _banner() {
@@ -123,6 +120,7 @@ Available commands:
   commands
   find
   global
+  list
   help
   version
 EOF
