@@ -9,6 +9,7 @@ _ME="${0##*/}"
 _VERSION="0.0.1"
 _HOMEPAGE="https://github.com/tg-z/jfs"
 COPY_FILE_OPT=0
+GLOBAL_OPT=0
 
 [ -z "${EDITOR}" ] && EDITOR="vim"
 
@@ -88,6 +89,10 @@ find() {
   fi
 
   echo "${results}"
+
+  if [[ "${GLOBAL_OPT}" -gt 1 ]]; then
+	  _global
+  fi
 }
 
 _banner() {
@@ -139,6 +144,10 @@ while getopts 'fhV' option; do
 		f)
 			shift
 			COPY_FILE_OPT=1
+			;;
+		g)
+			shift
+			GLOBAL_OPT=1
 			;;
 		h)
 			shift
