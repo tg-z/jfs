@@ -146,7 +146,7 @@ new() {
   touch "${name}"
   chmod +x "${name}"
 
-  _generate "${1}"
+  _generate "${*}"
 }
 
 find() {
