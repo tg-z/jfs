@@ -91,7 +91,8 @@ list() {
 preview() {
   _check
   cd "${JUSTFILE_DIR}"
-  local _files="$()"
+  local _files="$("${_fd}" -i -H -t f --color=never | "${_fzf}" | xargs "${_bat}" -n)"
+}
 
 _global() {
   _check
