@@ -247,7 +247,7 @@ case "${1:-help}" in
 		;;
 	("new")
 		shift
-		new
+		new "${@}"
 		;;
 	("preview")
 		shift
