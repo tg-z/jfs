@@ -176,7 +176,7 @@ while getopts 'fghV' option; do
 			exit 0
 			;;
 		*)
-			_error "command not found\n" >&2
+			_error "command not found" >&2
 			false
 			;;
 	esac
@@ -200,7 +200,7 @@ case "${1:-help}" in
 		version
 		;;
 	*)
-		_error "command not found\n" >&2
+		_error "command not found" >&2
 		false
 		;;
 esac
