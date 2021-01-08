@@ -99,7 +99,7 @@ preview() {
 _global() {
   _check
   local _list
-  _list="$("${_fd}" justfile '/' -i -H -t f --maxdepth 6)"
+  _list="$("${_fd}" justfile '/Users' -i -H -t f --maxdepth 6)"
   printf "%s\n" "${_list}"
 }
 
