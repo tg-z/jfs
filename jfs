@@ -103,6 +103,32 @@ _global() {
   printf "%s\n" "${_list}"
 }
 
+_generate(){
+  _check
+  cd "${JUSTFILE_DIR}"
+  local _content
+  read -r -d '' _content <<TEMPLATE || true
+#!/usr/bin/env just --justfile
+
+set shell := ["zsh", "-cu"]
+alias ls := list
+cwd := `pwd`
+
+# just
+default:
+    @just -u --list
+
+# just list
+list:
+    @fd -i -H -t f --color=never
+
+TEMPLATE
+
+  printf "creating new justfile in %s\\n" "${JUSTFILE_DIR}"
+  printf "%s\\n" "${_content}" >> "${_name}"
+  exit 0
+}
+
 find() {
   _check
   local files="${1}"
