@@ -112,7 +112,7 @@ _generate(){
 
 set shell := ["zsh", "-cu"]
 alias ls := list
-# cwd := `pwd`
+cwd := `pwd`
 
 # just
 default:
