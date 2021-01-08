@@ -82,6 +82,7 @@ _copy() {
 }
 
 list() {
+  _check
   cd "${JUSTFILE_DIR}"
   local _files
   _files="$("${_fd}" -i -H -t f --color=never)"
