@@ -18,6 +18,12 @@
 
 ## features
 
+### globally justfiles
+`jfs` makes it easy to find whichever justfile you need on your system.
+
+### search, preview edit
+`jfs` allows for more to be done using `just`.
+
 ## install
 
 ### dependencies
