@@ -81,11 +81,11 @@ _copy() {
   fi
 }
 
-_global () {
-	_check
-        local _list
-	_list="$("${_fd}" justfile '/Users/bluetooth' -i -H -t f --maxdepth 6)"
-        printf "%s\n" "${_list}"
+_global() {
+  _check
+  local _list
+  _list="$("${_fd}" justfile '/Users/bluetooth' -i -H -t f --maxdepth 6)"
+  printf "%s\n" "${_list}"
 }
 
 find() {
