@@ -59,7 +59,8 @@ _copy() {
 }
 
 _justfiles () {
-        local _list="$(fd justfile '/Users/bluetooth' -i -H -t f --maxdepth 6)"
+        local _list
+	_list="$(fd justfile '/Users/bluetooth' -i -H -t f --maxdepth 6)"
         printf "%s\n" "${_list}"
 }
 
