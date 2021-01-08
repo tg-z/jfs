@@ -7,7 +7,7 @@
 <img src="https://img.shields.io/github/contributors/tg-z/jfs?color=ff69b4"/></a>
 </p>
 
-<p align="center">a small tool for managing your zettelkasten. 📓 </p>
+<p align="center">a tool for just dealing with your justfiles.</p>
 
 <p align="center">
   <a href="#features">features</a> •
@@ -21,15 +21,11 @@
 ### git integration
 `jfs` uses `git` to sync zettelkasten files and autocommit changes to remote repository if configured.
 
-### live markdown preview
-`jfs` uses `mlp` to preview markdown files before committing them to a remote repository.
-
 ## install
 
 ### dependencies
 - [fd](https://crates.io/crates/fd-find): fd is a simple, fast and user-friendly alternative to [find](https://www.gnu.org/software/findutils/).
 - [fzf](https://github.com/junegunn/fzf): fzf is a general-purpose command-line fuzzy finder.
-- [mlp](https://github.com/ms-jpq/markdown-live-preview): mlp shows a live web preview of markdown docs
 - [bat](https://github.com/sharkdp/bat): A cat(1) clone with wings.
 - [ag](https://geoff.greer.fm/ag/): A code-searching tool similar to ack, but faster.
 
