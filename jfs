@@ -178,6 +178,10 @@ case "${1:-help}" in
 		shift
 		find "${1}"
 		;;
+	("global")
+		shift
+		_global
+		;;
 	("help")
 		shift
 		help
