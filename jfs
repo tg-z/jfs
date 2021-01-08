@@ -195,6 +195,10 @@ case "${1:-help}" in
 		shift
 		help
 		;;
+	("preview")
+		shift
+		preview
+		;;
 	("version")
 		shift
 		version
