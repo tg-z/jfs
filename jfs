@@ -109,13 +109,7 @@ find() {
   local results
   results="$("${_ag}" -rg "${files}" "${JUSTFILE_DIR}")"
 
-  if [ ! "${results}" -eq 0 ]; then
-    _info "No results were found"
-    exit 1
-  fi
-
   echo "${results}"
-
 }
 
 _banner() {
