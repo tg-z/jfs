@@ -146,6 +146,7 @@ new() {
 
   touch "${name}"
   chmod +x "${name}"
+  echo "${name}"
 
   _generate "${1}"
 }
