@@ -132,7 +132,7 @@ new() {
   cd "${JUSTFILE_DIR}"
   local _name
   if [[ "${#}" -gt 0 ]]; then
-	  _name="${@}"
+	  _name="${*}"
 	  name="$(echo "${_name}" | tr ' ' '_' | tr '[:upper:]' '[:lower:]')"
 
   else
