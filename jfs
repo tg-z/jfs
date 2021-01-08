@@ -28,6 +28,8 @@ _var() {
   _just="$(command -v just)"
   _fzf="$(command -v fzf)"
   _ag="$(command -v ag)"
+  _fd="$(command -v fd)"
+  _bat="$(command -v bat)"
 }
 
 _check() {
