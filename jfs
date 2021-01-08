@@ -139,7 +139,7 @@ version() {
   printf "%s %s\n" "${_ME}" "${_VERSION}"
 }
 
-while getopts 'fhV' option; do
+while getopts 'fghV' option; do
 	case "${option}" in
 		f)
 			shift
