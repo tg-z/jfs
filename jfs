@@ -122,6 +122,7 @@ _commands() {
 Available commands:
   commands
   find
+  global
   help
   version
 EOF
@@ -135,7 +136,6 @@ ${_ME} - a tool for just dealing with your justfiles.
 Usage:
   ${_ME} <cmd> <opts> args
 Options:
-  -g 	Display global justfile paths.
   -h 	Display this help information.
   -V 	Display version information and exit.
 Home:
@@ -150,12 +150,8 @@ version() {
   printf "%s %s\n" "${_ME}" "${_VERSION}"
 }
 
-while getopts 'ghV' option; do
+while getopts 'hV' option; do
 	case "${option}" in
-		g)
-			shift
-			GLOBAL_OPT=1
-			;;
 		h)
 			shift
 			help
