@@ -8,7 +8,6 @@ IFS=$'\n\t'
 _ME="${0##*/}"
 _VERSION="0.0.1"
 _HOMEPAGE="https://github.com/tg-z/jfs"
-GLOBAL_OPT=0
 
 [ -z "${EDITOR}" ] && EDITOR="vim"
 
