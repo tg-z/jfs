@@ -135,6 +135,9 @@ new() {
   if [[ "$#" -gt 0 ]]; then
 	  _name="new_justfile"
 	  name="$(echo "${_name}" | tr ' ' '_' | tr '[:upper:]' '[:lower:]')"
+  else
+	  name="justfile_$(date -I)"
+  fi
 
   if [[ -f "${name}" ]]; then
 	  _error "already exists in this location.\n"
