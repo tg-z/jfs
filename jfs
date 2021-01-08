@@ -124,7 +124,7 @@ list:
 TEMPLATE
 
   printf "creating new justfile in %s\\n" "${JUSTFILE_DIR}"
-  printf "%s\\n" "${_content}" >> "${name}"
+  printf "%s\n" "${_content}" >> "${name}"
   exit 0
 }
 
