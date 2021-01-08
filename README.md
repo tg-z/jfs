@@ -18,7 +18,7 @@
 
 ## features
 
-### globally justfiles
+### global justfiles
 `jfs` makes it easy to find whichever justfile you need on your system.
 
 ### search, preview edit
