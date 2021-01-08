@@ -141,6 +141,7 @@ Usage:
   ${_ME} <cmd> <opts> args
 Options:
   -f 	Copy justfile location/path after running command.
+  -g 	Display global justfile paths.
   -h 	Display this help information.
   -V 	Display version information and exit.
 Home:
