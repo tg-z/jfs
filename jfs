@@ -18,12 +18,6 @@ else
   mkdir -p "${JUSTFILE_DIR}"
 fi
 
-# if [ -z "${1}" ]; then
-# 	_help
-# else
-# 	terminal-notifier -message "you said: " "${1}"
-# fi
-
 _info() {
     # $*: info message
     printf "%b\n" "\033[32mINFO\033[0m ${*}" >&2
