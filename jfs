@@ -85,6 +85,7 @@ list() {
   cd "${JUSTFILE_DIR}"
   local _files
   _files="$(fd -i -H -t f --color=never)"
+  printf "%s\n" "${_files}"
 }
 
 _global() {
