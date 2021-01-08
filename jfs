@@ -96,7 +96,7 @@ find() {
   results="$("${_ag}" -rg "${files}" "${JUSTFILE_DIR}")"
 
   if [ ! "${results}" -eq 0 ]; then
-    echo "No results were found"
+    _info "No results were found"
     exit 1
   fi
 
