@@ -46,6 +46,14 @@ _check() {
       echo "you must install ag to run this command"
       exit 1
   fi
+  if [ ! -x "${_fd}" ]; then
+	  echo "you must install fd to run this command"
+	  exit 1
+  fi
+  if [ ! -x "${_bat}" ]; then
+	  echo "you must install bat to run this command"
+	  exit 1
+  fi
 }
 
 _copy() {
