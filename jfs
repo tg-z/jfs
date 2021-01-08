@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# shellcheck disable=SC2006
-
 set -e
 set -o nounset
 set -o pipefail
