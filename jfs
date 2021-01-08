@@ -129,6 +129,23 @@ TEMPLATE
   exit 0
 }
 
+new() {
+  cd "${JUSTFILE_DIR}"
+  local _name
+  if [[ "$#" -gt 0 ]]; then
+	  _name="new_justfile"
+	  name="$(echo "${_name}" | tr ' ' '_' | tr '[:upper:]' '[:lower:]')"
+
+  if [[ -f "${name}" ]]; then
+	  _error "already exists in this location.\n"
+	  exit 0
+  fi
+
+  touch "${name}"
+
+  _generate "${1}"
+}
+
 find() {
   _check
   local files="${1}"
