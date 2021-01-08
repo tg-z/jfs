@@ -124,13 +124,13 @@ list:
 TEMPLATE
 
   printf "creating new justfile in %s\\n" "${JUSTFILE_DIR}"
-  printf "%s" "${_content}" >> "${name}"
+  printf "%s\\n" "${_content}" >> "${name}"
   exit 0
 }
 
 new() {
   cd "${JUSTFILE_DIR}"
-  local _name
+  local name
   if [[ "${#}" -gt 0 ]]; then
 	  _name="${*}"
 	  name="$(echo "${_name}" | tr ' ' '_' | tr '[:upper:]' '[:lower:]')"
