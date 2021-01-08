@@ -26,17 +26,17 @@ fi
 # fi
 
 _info() {
-    # $1: info message
+    # $*: info message
     printf "%b\n" "\033[32mINFO\033[0m ${*}" >&2
 }
 
 _warn() {
-    # $1: warning message
+    # $*: warning message
     printf "%b\n" "\033[33mWARNING\033[0m ${*}" >&2
 }
 
 _error() {
-    # $1: error message
+    # $*: error message
     printf "%b\n" "\033[31mERROR\033[0m ${*}" >&2
     exit 1
 }
