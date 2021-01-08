@@ -131,7 +131,7 @@ TEMPLATE
 new() {
   cd "${JUSTFILE_DIR}"
   local name
-  if [[ "${#}" -gt 0 ]]; then
+  if [[ "${#}" -gt 1 ]]; then
 	  _name="${*}_"
 	  name="$(echo "${_name}" | tr ' ' '_' | tr '[:upper:]' '[:lower:]')"
 
