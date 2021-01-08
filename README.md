@@ -28,6 +28,7 @@
 - [fzf](https://github.com/junegunn/fzf): fzf is a general-purpose command-line fuzzy finder.
 - [bat](https://github.com/sharkdp/bat): A cat(1) clone with wings.
 - [ag](https://geoff.greer.fm/ag/): A code-searching tool similar to ack, but faster.
+- [just](https://github.com/casey/just): just is a handy way to save and run project-specific commands.
 
 ```sh
 # clone repo
