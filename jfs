@@ -100,10 +100,6 @@ find() {
     exit 1
   fi
 
-  if [[ "${COPY_FILE_OPT}" -gt 1 ]]; then
-    _copy "${results}"
-  fi
-
   echo "${results}"
 
   if [[ "${GLOBAL_OPT}" -gt 1 ]]; then
@@ -156,12 +152,8 @@ version() {
   printf "%s %s\n" "${_ME}" "${_VERSION}"
 }
 
-while getopts 'fghV' option; do
+while getopts 'ghV' option; do
 	case "${option}" in
-		f)
-			shift
-			COPY_FILE_OPT=1
-			;;
 		g)
 			shift
 			GLOBAL_OPT=1
