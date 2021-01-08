@@ -210,6 +210,6 @@ esac
 # 	printf "%s" "you must set a directory for your justfiles\n"
 # 	false
 # else
-# just -d "${JUSTFILES_DIR}"
+# just -d "${JUSTFILE_DIR}" -f "${JUSTFILE_DIR}/justfile"
 # just -f ~/.local/share/justfiles/justfile -d ~/.local/share/justfiles
 #}
