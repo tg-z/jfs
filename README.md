@@ -18,9 +18,6 @@
 
 ## features
 
-### git integration
-`jfs` uses `git` to sync zettelkasten files and autocommit changes to remote repository if configured.
-
 ## install
 
 ### dependencies
