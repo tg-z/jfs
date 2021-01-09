@@ -176,7 +176,6 @@ Available commands:
   help
   new
   preview
-  version
 EOF
 }
 
@@ -249,10 +248,6 @@ case "${1:-help}" in
 	("preview")
 		shift
 		preview
-		;;
-	("version")
-		shift
-		version
 		;;
 	*)
 		_error "command not found" >&2
